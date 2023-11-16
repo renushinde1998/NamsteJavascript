@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>list</title>
+    
+</head>
+<body>
+    <!-- we will add 7 to it-->
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+    <script>
+        //element using qureySelectorAll and insertBefore
+        let ourList=document.querySelector("ul");
+        let items=document.querySelectorAll("li");
+        console.log(items);
+        let indexThatHas8=items[6];//read operation
+        //create element
+        let sevenElem=document.createElement('li');
+        sevenElem.innerText="7";
+
+        //updating 
+        ourList.insertBefore(sevenElem,indexThatHas8);//(konala add karaycha,konca aadhi)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+        button{
+            height:200px;
+            width:300px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background-color: purple;
+        }
+        div{
+          height:200px;
+          width:300px;
+          background-color:yellow;
+          padding:10px;
+        }
+    </style>
+    
+</head>
+<body>
+    <button id="btn-1" class="btnClass">Say Hello</button>
+    <script>
+        //on clicking of the button append hello to the page
+
+     //let btn=document.getElementByTagName("button");
+     //let btn=document.getElementById("btn-1");
+     //let btnClass=document.getElementsByClassName("btnClass");
+     
+     let btn=document.querySelector("#btn-1");
+     btn.addEventListener("click",function(event){
+        console.log("From event listener",event);
+
+        //creating new element
+        let divElem=document.createElement("div");
+        divElem.innerText="Hello";
+        //<div>Hello</div>
+
+        //upate the dom
+        let body=document.querySelector("body");
+        body.appendChild(divElem);
+     });
+     //console.log('btn');
+    </script>
+</body>
+</html>

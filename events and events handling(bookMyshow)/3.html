@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rat cather</title>
+    <style>
+        .cell{
+            margin:10rem;
+         width:20vw;
+         height:20vw;
+         display:flex;
+         border:2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="cell">Food</div>
+    <script>
+        //jail the mouse
+        //q you are given an empty cell
+        //write a script that whenever the mouse enters
+        //the cell jail should be drawn over it and it should be removed once
+        //leaves(hint: use a background-image to set jail)
+        let cell = document.querySelector(".cell");
+
+        cell.addEventListener("mouseover",() =>{
+            cell.style.background = "url(./jailImg.jpg)";
+        });
+
+        cell.addEventListener("mouseout", () => {
+            cell.style.background = "none";
+        });
+
+    </script>
+</body>
+</html>

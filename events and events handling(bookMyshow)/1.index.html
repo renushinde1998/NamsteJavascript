@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMyShow</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            flex-wrap:wrap;
+            justify-content: space-around;
+            padding-top: 5 rem;
+        }
+        .movies{
+            height:10rem;
+            width:10rem;
+            margin:4rem;
+        }
+
+        .price{
+            background-color: rgb(173, 7, 118);
+            height:8rem;
+            padding:1.5rem;
+            font-size: 2rem;
+        }
+
+        .heading{
+            background-color: rgba(87, 75, 75, 0.856);
+            height:2rem;
+        }
+        .heading, .price{
+            color:white;
+            text-align: center;
+            margin:0;
+        }
+
+        select,
+        h1{
+            position: fixed;
+        }
+
+        h1{
+            top:0px;
+        }
+
+        select{
+            width:8rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Book My Show</h1>
+    <select>
+        <option value="none">None</option>
+        <option value="action">Action</option>
+        <option value="romance">Romance</option>
+        <option value="comedy">comedy</option>
+    </select>
+
+    <div class="movies">
+        <h3 class="heading">Action Movie-1</h3>
+        <p class="price" data-catagory="action">Rs 100</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading">Action Movie-2</h3>
+        <p class="price" data-catagory="action">Rs 200</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading">Action Movie-3</h3>
+        <p class="price" data-catagory="action">Rs 200</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading">Romance-1</h3>
+        <p class="price" data-catagory="romance">Rs 100</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading">Romance-2</h3>
+        <p class="price" data-catagory="romance">Rs 100</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading">Romance-3</h3>
+        <p class="price" data-catagory="romance">Rs 100</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading">Action Movie-4</h3>
+        <p class="price" data-catagory="action">Rs 100</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading">Comedy-1</h3>
+        <p class="price" data-catagory="comedy">Rs 100</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading">Romance-4</h3>
+        <p class="price" data-catagory="romance">Rs 100</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading">Comedy-2</h3>
+        <p class="price" data-catagory="comedy">Rs 100</p>
+    </div>
+    <script>
+        <!-- to make filter work-->
+        let select = document.querySelector("select");
+
+        select.addEventListener("change", function(){
+            let filterValue = select.value;
+            let allTickets = document.querySelectorAll(".price"); // access to cards
+
+            if(filterValue === "none")
+            {
+                for(let i=0;i<allTickets.lenght;i++){
+                    allTickets[i].parentElement.style.display = "block";
+                }
+            }
+            else{
+                for(let i=0;i<allTickets.lenght;i++)
+                {
+                    if(allTickets[i].getAttribute("data-catagory") !== filterValue){
+                        allTickets[i].parentElement.style.display = "none";
+                    }
+                    else{
+                        allTickets[i].parentElement.style.display = "block";
+                    }
+                }
+            }
+
+        });
+       
+    </script>
+</body>
+</html>
